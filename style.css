@@ -1,0 +1,323 @@
+@media (prefers-reduced-motion) {
+    .social-media-marquee-content{
+      animation: slide 50s linear infinite;
+    }
+  }
+  
+  html, body {
+      max-width: 100%;
+      overflow-x: hidden;
+  }
+  
+  #bg{
+    min-width: 100%;
+    height: 814px;
+    position: absolute;
+  }
+  
+  #section-bg{
+    min-width: 100%;
+    height: 900px;
+    position: absolute;
+  }
+  
+  .hero{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #logo-icon{
+    width: 200px;
+    position:relative;
+    padding: 45px 0 5px 0;
+  }
+  
+  .poster{
+    position:relative;
+    padding: 5px 0 5px 0;
+  }
+  
+  #poster-image{
+    width: 200px;
+    transform: scale(1);
+  }
+
+  #poster-bubble{
+    width: 400px;
+    opacity:0;
+    position: absolute;
+    z-index: 1;
+    top:  -10px;
+    left: -90px;
+  }
+  
+  .poster:hover{
+        cursor: pointer;
+        #poster-image{
+            filter: drop-shadow(4px 0 0 white) drop-shadow(0 4px 0  white) drop-shadow(-4px 0 0 white) drop-shadow(0 -4px 0  white);
+            transform: scale(1.1);
+        }
+        #poster-bubble{
+            opacity:1;
+            animation: pop 0.5s ease-out forwards;
+        }    
+    }
+
+    @keyframes pop {
+        0% {
+            transform: scale(1, 1);
+          }
+          30% {
+            transform: scale(1.3, 0.7); /* Squash */
+          }
+          50% {
+            transform: scale(0.8, 1.2); /* Stretch */
+          }
+          70% {
+            transform: scale(1.1, 0.9); /* Slight bounce */
+          }
+          100% {
+            transform: scale(1.2, 1.2); /* Final settle */
+          }
+    }
+
+ 
+  
+  .buttons{
+    position: relative;
+  }
+  
+  #button-first-row, #button-second-row, #button-third-row{
+    width: auto;
+    margin: 10px auto;
+    border-spacing: 10px;
+  }
+  
+  .social-media-marquee{
+    white-space: nowrap;
+    overflow: hidden;
+    min-height: 7vh; 
+    margin-top: 30px;
+    background-color:#fa0729;
+    position: relative;
+  }
+  
+  .social-media-marquee-content{
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    animation: slide 10s linear infinite;
+  }
+  
+  .social-media-marquee:hover .social-media-marquee-content{
+    animation-play-state: paused;
+  }
+  
+  @keyframes slide{
+    from{
+        transform: translateX(0);
+    }
+    to{ 
+        transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes pixelize {
+    0%{
+      background-position-y: 0px;
+    }
+    100%{
+      background-position-y: -480px;
+    }
+  }
+   
+  #catchphrase{
+    color:white;
+    font-size: 2rem;
+    font-family:'Pixelify Sans';
+  }
+  
+  .fa-brands { 
+    transform: scale(1.5,1.5);
+    font-size: 30px; 
+    text-align: center;
+    text-decoration: none;
+    margin: 25px; 
+    color: white;
+  }
+  
+  .fa-brands:hover {
+    transform: scale(1.7);
+  }
+  
+  #button-subscribe, #button-feed, 
+  #button-projects, #button-vlogs, 
+  #button-reels, #button-resume,
+  #button-submit {
+    width: 100px;
+    height: 35px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    background-color:white;
+    border: 2px solid #fa0729;
+    font-family: 'Pixelify Sans';
+    cursor: pointer;
+  }
+  
+  .button:hover{
+    background: #fa0729 url(https://firebasestorage.googleapis.com/v0/b/codedex-io.appspot.com/o/buildAssets%2FRd0yc4mk1Mm1fyW3uF3D%2Fred_pixels.png?alt=media&token=a9feb287-2d9e-4c35-b68c-90d572277e96) ;
+    transition-delay: 0.3s;
+    background-size: 200px; 
+    animation: pixelize 0.3s steps(7) forwards;
+  }
+  
+  .button-text {
+    text-decoration: none;
+    color: #fa0729;
+    padding: 25px;
+  }
+  
+  .button-text:hover{
+    transition-delay: 0.3s;
+    color: white;
+  }
+  
+  #section{
+      margin-top: 30px;
+  }
+  
+  #section, .section-header,
+  .section-block{
+    border: 1px solid black;
+    background-color: white;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .section-header {
+    font-family:'Pixelify Sans';
+    color: white; 
+    background-color: #fa0729;
+    white-space: nowrap;
+  }
+  
+  #section{
+    width: 200px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #section-feed, #section-reels, #section-projects, #section-vlogs{
+    width: auto;
+    height: 30px;
+  }
+  
+  #section-feed .fa-window-minimize, 
+  #section-reels .fa-window-minimize{
+    margin-left: 250px;
+  }
+  
+  #section-projects .fa-window-minimize{
+    margin-left: 410px;
+  }
+  
+  #section-vlogs .fa-window-minimize{
+    margin-left: 440px;
+  }
+  
+  #section-projects-block, #section-vlogs-block, 
+  #section-feed-block, #section-reels-block{
+     height: auto;
+  }
+  
+  .slider-projects::-webkit-scrollbar{
+    display:none;
+  }
+  
+  .slider-vlogs::-webkit-scrollbar{
+    display:none;
+  }
+  
+  .slider-projects-wrap, .slider-vlogs-wrap{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    width: 550px;
+  }
+  
+  .slider-projects, .slider-vlogs{
+    width: 1500px;
+    overflow-x: scroll;
+    display:flex;
+    margin:0 auto;
+  }
+  
+  .slider-projects div, .slider-vlogs div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto;
+    grid-gap: 20px;
+    padding: 10px;
+    flex: none;
+  }
+  
+  .slider-projects img, .slider-vlogs img{
+    margin: 30px;
+    width: 390px;
+    filter: grayscale(100);
+    transition: transform 0.5s;
+  }
+  
+  #projects-back-button, #projects-next-button,
+  #vlogs-back-button, #vlogs-next-button{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+  
+  .slider-projects img:hover, .slider-vlogs img:hover{
+    filter: grayscale(0);
+    cursor: pointer;
+    transform: scale(1.1);
+  }
+  
+  h1{
+    text-align: center;
+  }
+  
+  .guestbook-form{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Pixelify Sans';
+    color: white;
+    background-color: #fa0729;
+  }
+  
+  .guestbook-entries{
+    display: none;
+  }
+  
+  #name, #country, #comment{
+      border-radius: 4px;
+      font-family: 'Pixelify Sans';
+      text-align: left;
+  }
+  
+  #name{
+    margin-left: 25px;
+  }
+  
+  #entries {
+    text-align: left;
+  }
