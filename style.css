@@ -322,9 +322,15 @@
     text-align: left;
   }
 
-  #entries div {
-      white-space: pre-wrap; /* preserve line breaks and wrap long lines */
-      word-wrap: break-word;  /* break long words */
-      margin-bottom: 1rem;
-      font-family: 'Pixelify Sans', sans-serif;
+ .entry-box {
+  width: 515px; /* Roughly matches cols="49" of the textarea */
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 2px dashed #fa0729;
+  border-radius: 10px;
+  background-color: white;
+  color: black;
+  font-family: 'Pixelify Sans', sans-serif;
+  white-space: pre-wrap; /* for line breaks */
+  word-wrap: break-word; /* for long words */
 }
