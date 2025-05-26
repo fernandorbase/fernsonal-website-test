@@ -70,7 +70,10 @@ function addEntry() {
 database.ref("guestbook").on("child_added", function(snapshot) {
   const data = snapshot.val();
   const entryDiv = document.createElement('div');
-  entryDiv.innerHTML = `<strong>${data.name} from ${data.country}:</strong> ${data.comment}<hr>`;
+  const formattedComment = data.comment.replace(/\n/g, "<br>");
+  entryDiv.innerHTML = `<strong>${data.name} from ${data.country}:</strong><br>${formattedComment}<hr>`;
   document.getElementById('entries').prepend(entryDiv);
   document.querySelector('.guestbook-entries').style.display = 'block';
 });
+
+
