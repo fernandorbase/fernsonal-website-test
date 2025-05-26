@@ -45,28 +45,29 @@ if (audio.paused) {
 }
 });
 
+// Add guestbook entry
 function addEntry() {
   const name = document.getElementById('name').value.trim();
   const country = document.getElementById('country').value.trim();
   const comment = document.getElementById('comment').value.trim();
 
   if (name && country && comment) {
-      const newEntry = {
-          name,
-          country,
-          comment,
-          timestamp: Date.now()
-      };
-      firebase.database().ref("guestbook").push(newEntry);
+    database.ref("guestbook").push({
+      name,
+      country,
+      comment,
+      timestamp: Date.now()
+    });
 
-      document.getElementById('name').value = '';
-      document.getElementById('country').value = '';
-      document.getElementById('comment').value = '';
+    // Reset form
+    document.getElementById('name').value = '';
+    document.getElementById('country').value = '';
+    document.getElementById('comment').value = '';
   }
 }
 
-// Load entries from Firebase
-firebase.database().ref("guestbook").on("child_added", function(snapshot) {
+// Show entries
+database.ref("guestbook").on("child_added", function(snapshot) {
   const data = snapshot.val();
   const entryDiv = document.createElement('div');
   entryDiv.innerHTML = `<strong>${data.name} from ${data.country}:</strong> ${data.comment}<hr>`;
