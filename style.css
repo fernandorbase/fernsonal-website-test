@@ -351,7 +351,7 @@
   border: 2px solid #fa0729;
   font-family: 'Pixelify Sans', sans-serif;
   color: black;
-  position: absolute;
+  position: relative;
   animation: fadeUp 0.5s ease-out;
   box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
 }
