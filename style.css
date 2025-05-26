@@ -322,6 +322,13 @@
     text-align: left;
   }
 
+  #entries div {
+    white-space: pre-wrap; /* preserve line breaks and wrap long lines */
+    word-wrap: break-word;  /* break long words */
+    margin-bottom: 1rem;
+    font-family: 'Pixelify Sans', sans-serif;
+  }
+
  .entry-box {
   width: 515px; /* Roughly matches cols="49" of the textarea */
   padding: 10px;
