@@ -68,17 +68,22 @@ function addEntry() {
 
 // Show entries
 database.ref("guestbook").on("child_added", function(snapshot) {
-    const data = snapshot.val();
-    const entryDiv = document.createElement('div');
-    const formattedComment = data.comment.replace(/\n/g, "<br>");
-    entryDiv.innerHTML = `
-      <div class="entry-box">
-        <strong>${data.name} from ${data.country}:</strong><br>
-        ${formattedComment}
-      </div>
-    `;
-    document.getElementById('entries').prepend(entryDiv);
-    document.querySelector('.guestbook-entries').style.display = 'block';
-});
+  const data = snapshot.val();
 
+  const formattedComment = data.comment.replace(/\n/g, "<br>");
+  const timestamp = new Date(data.timestamp).toLocaleString();
+
+  const entryDiv = document.createElement('div');
+  entryDiv.classList.add('chat-bubble', 'pop-in');
+  entryDiv.innerHTML = `
+    <div class="bubble-header">
+      <strong>${data.name} from ${data.country}</strong>
+      <span class="timestamp">${timestamp}</span>
+    </div>
+    <div class="bubble-body">${formattedComment}</div>
+  `;
+
+  document.getElementById('entries').prepend(entryDiv);
+  document.querySelector('.guestbook-entries').style.display = 'block';
+});
 
