@@ -321,3 +321,10 @@
   #entries {
     text-align: left;
   }
+
+  #entries div {
+      white-space: pre-wrap; /* preserve line breaks and wrap long lines */
+      word-wrap: break-word;  /* break long words */
+      margin-bottom: 1rem;
+      font-family: 'Pixelify Sans', sans-serif;
+}
