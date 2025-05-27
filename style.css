@@ -144,7 +144,7 @@
   #catchphrase{
     color:white;
     font-size: 2rem;
-    font-family:'Pixelify Sans';
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   .fa-brands { 
@@ -172,7 +172,7 @@
     justify-content: center;
     background-color:white;
     border: 2px solid #fa0729;
-    /*font-family: 'Pixelify Sans';*/
+    font-family: 'Pixel Comic Sans', sans-serif;
     cursor: pointer;
   }
   
@@ -208,7 +208,7 @@
   }
   
   .section-header {
-    /*font-family:'Pixelify Sans';*/
+    font-family: 'Pixel Comic Sans', sans-serif;
     color: white; 
     background-color: #fa0729;
     white-space: nowrap;
@@ -305,7 +305,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /*font-family: 'Pixelify Sans';*/
+    font-family: 'Pixel Comic Sans', sans-serif;
     color: white;
     background-color: #fa0729;
   }
@@ -315,9 +315,9 @@
   }
   
   #name, #country, #comment{
-      border-radius: 4px;
-      /*font-family: 'Pixelify Sans';*/
-      text-align: left;
+    border-radius: 4px;
+    font-family: 'Pixel Comic Sans', sans-serif;
+    text-align: left;
   }
   
   #name{
@@ -332,34 +332,34 @@
     white-space: pre-wrap; /* preserve line breaks and wrap long lines */
     word-wrap: break-word;  /* break long words */
     margin-bottom: 1rem;
-   /* font-family: 'Pixelify Sans', sans-serif;*/
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
 
  .entry-box {
-  width: 515px; /* Roughly matches cols="49" of the textarea */
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 2px dashed #fa0729;
-  border-radius: 10px;
-  background-color: white;
-  color: black;
-  /*font-family: 'Pixelify Sans', sans-serif;*/
-  white-space: pre-wrap; /* for line breaks */
-  word-wrap: break-word; /* for long words */
+    width: 515px; /* Roughly matches cols="49" of the textarea */
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px dashed #fa0729;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    font-family: 'Pixel Comic Sans', sans-serif;
+    white-space: pre-wrap; /* for line breaks */
+    word-wrap: break-word; /* for long words */
 }
 
 .chat-bubble {
-  max-width: 515px;
-  margin: 10px auto;
-  padding: 12px 16px;
-  background-color: #fff;
-  border-radius: 20px;
-  border: 2px solid #fa0729;
-  /*font-family: 'Pixelify Sans', sans-serif;*/
-  color: black;
-  position: relative;
-  animation: fadeUp 0.5s ease-out;
-  box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+    max-width: 515px;
+    margin: 10px auto;
+    padding: 12px 16px;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 2px solid #fa0729;
+    font-family: 'Pixel Comic Sans', sans-serif;
+    color: black;
+    position: relative;
+    animation: fadeUp 0.5s ease-out;
+    box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
 }
 
 .bubble-header {
