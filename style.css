@@ -172,7 +172,7 @@
     justify-content: center;
     background-color:white;
     border: 2px solid #fa0729;
-    font-family: 'Pixel Comic Sans', sans-serif;
+    /*font-family: 'Pixel Comic Sans', sans-serif;*/
     cursor: pointer;
   }
   
@@ -208,7 +208,7 @@
   }
   
   .section-header {
-    font-family: 'Pixel Comic Sans', sans-serif;
+    /*font-family: 'Pixel Comic Sans', sans-serif;*/
     color: white; 
     background-color: #fa0729;
     white-space: nowrap;
@@ -305,7 +305,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Pixel Comic Sans', sans-serif;
+    /*font-family: 'Pixel Comic Sans', sans-serif;*/
     color: white;
     background-color: #fa0729;
   }
@@ -316,7 +316,7 @@
   
   #name, #country, #comment{
     border-radius: 4px;
-    font-family: 'Pixel Comic Sans', sans-serif;
+    /*font-family: 'Pixel Comic Sans', sans-serif;*/
     text-align: left;
   }
   
@@ -343,7 +343,7 @@
     border-radius: 10px;
     background-color: white;
     color: black;
-    font-family: 'Pixel Comic Sans', sans-serif;
+    /*font-family: 'Pixel Comic Sans', sans-serif;*/
     white-space: pre-wrap; /* for line breaks */
     word-wrap: break-word; /* for long words */
 }
@@ -355,7 +355,7 @@
     background-color: #fff;
     border-radius: 20px;
     border: 2px solid #fa0729;
-    font-family: 'Pixel Comic Sans', sans-serif;
+    /*font-family: 'Pixel Comic Sans', sans-serif;*/
     color: black;
     position: relative;
     animation: fadeUp 0.5s ease-out;
