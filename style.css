@@ -3,10 +3,16 @@
       animation: slide 50s linear infinite;
     }
   }
+
+@font-face {
+  font-family: 'Pixel Comic Sans';
+  src: url('assets/brand-kit/pixel-comic-sans-undertale-sans-font.ttf') format('truetype');
+}
   
   html, body {
-      max-width: 100%;
-      overflow-x: hidden;
+    max-width: 100%;
+    overflow-x: hidden;
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   #bg{
@@ -166,7 +172,7 @@
     justify-content: center;
     background-color:white;
     border: 2px solid #fa0729;
-    font-family: 'Pixelify Sans';
+    /*font-family: 'Pixelify Sans';*/
     cursor: pointer;
   }
   
@@ -202,7 +208,7 @@
   }
   
   .section-header {
-    font-family:'Pixelify Sans';
+    /*font-family:'Pixelify Sans';*/
     color: white; 
     background-color: #fa0729;
     white-space: nowrap;
@@ -299,7 +305,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Pixelify Sans';
+    /*font-family: 'Pixelify Sans';*/
     color: white;
     background-color: #fa0729;
   }
@@ -310,7 +316,7 @@
   
   #name, #country, #comment{
       border-radius: 4px;
-      font-family: 'Pixelify Sans';
+      /*font-family: 'Pixelify Sans';*/
       text-align: left;
   }
   
@@ -326,7 +332,7 @@
     white-space: pre-wrap; /* preserve line breaks and wrap long lines */
     word-wrap: break-word;  /* break long words */
     margin-bottom: 1rem;
-    font-family: 'Pixelify Sans', sans-serif;
+   /* font-family: 'Pixelify Sans', sans-serif;*/
   }
 
  .entry-box {
@@ -337,7 +343,7 @@
   border-radius: 10px;
   background-color: white;
   color: black;
-  font-family: 'Pixelify Sans', sans-serif;
+  /*font-family: 'Pixelify Sans', sans-serif;*/
   white-space: pre-wrap; /* for line breaks */
   word-wrap: break-word; /* for long words */
 }
@@ -349,7 +355,7 @@
   background-color: #fff;
   border-radius: 20px;
   border: 2px solid #fa0729;
-  font-family: 'Pixelify Sans', sans-serif;
+  /*font-family: 'Pixelify Sans', sans-serif;*/
   color: black;
   position: relative;
   animation: fadeUp 0.5s ease-out;
