@@ -26,7 +26,8 @@
     height: 900px;
     position: absolute;
   }
-  
+
+/* Style for Hero Section */
   .hero{
     display: flex;
     position: relative;
@@ -89,11 +90,8 @@
             transform: scale(1.2, 1.2); /* Final settle */
           }
     }
-
- 
   
   .buttons{
-    font-family: 'Pixel Comic Sans', sans-serif;
     position: relative;
   }
   
@@ -173,10 +171,11 @@
     background-color:white;
     border: 2px solid #fa0729;
     cursor: pointer;
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   .button:hover{
-    background: #fa0729 url(https://firebasestorage.googleapis.com/v0/b/codedex-io.appspot.com/o/buildAssets%2FRd0yc4mk1Mm1fyW3uF3D%2Fred_pixels.png?alt=media&token=a9feb287-2d9e-4c35-b68c-90d572277e96) ;
+    background: #fa0729 url('assets/images/red_pixels.png') ;
     transition-delay: 0.3s;
     background-size: 200px; 
     animation: pixelize 0.3s steps(7) forwards;
@@ -192,7 +191,8 @@
     transition-delay: 0.3s;
     color: white;
   }
-  
+
+/* Style for Sections */
   #section{
       margin-top: 30px;
   }
@@ -296,7 +296,9 @@
   h1{
     text-align: center;
   }
-  
+
+/* Style for Guestbook */
+
   .guestbook-form{
     display: flex;
     position: relative;
@@ -305,7 +307,6 @@
     justify-content: center;
     color: white;
     background-color: #fa0729;
-    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   .guestbook-entries{
@@ -326,21 +327,21 @@
   }
 
   #entries div {
-    white-space: pre-wrap; /* preserve line breaks and wrap long lines */
-    word-wrap: break-word;  /* break long words */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
     margin-bottom: 1rem;
   }
 
  .entry-box {
-    width: 515px; /* Roughly matches cols="49" of the textarea */
+    width: 515px; 
     padding: 10px;
     margin-bottom: 20px;
     border: 2px dashed #fa0729;
     border-radius: 10px;
     background-color: white;
     color: black;
-    white-space: pre-wrap; /* for line breaks */
-    word-wrap: break-word; /* for long words */
+    white-space: pre-wrap; 
+    word-wrap: break-word; 
 }
 
 .chat-bubble {
