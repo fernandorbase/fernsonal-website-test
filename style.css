@@ -28,6 +28,7 @@
   }
 
 /* Style for Hero Section */
+
   .hero{
     display: flex;
     position: relative;
@@ -174,7 +175,7 @@
   }
   
   .button:hover{
-    background: #fa0729 url('assets/images/red_pixels.png') ;
+    background: #fa0729 url('assets/brnd-kit/pixel.png') ;
     transition-delay: 0.3s;
     background-size: 200px; 
     animation: pixelize 0.3s steps(7) forwards;
@@ -193,6 +194,7 @@
   }
 
 /* Style for Sections */
+
   #section{
       margin-top: 30px;
   }
