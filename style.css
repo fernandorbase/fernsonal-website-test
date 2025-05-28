@@ -93,6 +93,7 @@
  
   
   .buttons{
+    font-family: 'Pixel Comic Sans', sans-serif;
     position: relative;
   }
   
@@ -304,6 +305,7 @@
     justify-content: center;
     color: white;
     background-color: #fa0729;
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   .guestbook-entries{
