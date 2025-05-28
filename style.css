@@ -171,7 +171,6 @@
     background-color:white;
     border: 2px solid #fa0729;
     cursor: pointer;
-    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   .button:hover{
@@ -185,6 +184,7 @@
     text-decoration: none;
     color: #fa0729;
     padding: 25px;
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   .button-text:hover{
@@ -316,6 +316,7 @@
   #name, #country, #comment{
     border-radius: 4px;
     text-align: left;
+    font-family: 'Pixel Comic Sans', sans-serif;
   }
   
   #name{
