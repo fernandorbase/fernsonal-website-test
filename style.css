@@ -9,299 +9,346 @@
   src: url('assets/brand-kit/pixel-comic-sans-undertale-sans-font.ttf') format('truetype');
 }
   
-  html, body {
+html, body {
     max-width: 100%;
     overflow-x: hidden;
     font-family: 'Pixel Comic Sans', sans-serif;
-  }
+    margin: 0; /* Added to remove default margin */
+    padding: 0; /* Added to remove default padding */
+    box-sizing: border-box; /* Apply box-sizing to all elements for easier layout */
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+img { /* General responsive images */
+    max-width: 100%;
+    height: auto;
+    display: block; /* Removes extra space below images */
+}
   
-  #bg{
+#bg {
     min-width: 100%;
-    height: 814px;
+    height: 814px; /* This fixed height might still be an issue on some aspect ratios */
     position: absolute;
-  }
+    object-fit: cover; /* Helps background image cover the area */
+    z-index: -1; /* Ensure it's behind content */
+}
   
-  #section-bg{
+#section-bg {
     min-width: 100%;
-    height: 900px;
+    height: 900px; /* This fixed height might still be an issue */
     position: absolute;
-  }
+    object-fit: cover;
+    z-index: -1;
+    top: 0; /* Ensure it covers from the top */
+    left: 0;
+}
 
 /* Style for Hero Section */
-
-  .hero{
+.hero {
     display: flex;
     position: relative;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-  }
+    padding: 20px; /* Add some padding */
+    min-height: 70vh; /* Give hero some minimum height */
+}
   
-  #logo-icon{
-    width: 200px;
+#logo-icon {
+    width: 180px; /* Adjusted base width */
     position:relative;
     padding: 45px 0 5px 0;
-  }
+}
   
-  .poster{
+.poster {
     position:relative;
     padding: 5px 0 5px 0;
-  }
+}
   
-  #poster-image{
-    width: 200px;
+#poster-image {
+    width: 180px; /* Adjusted base width */
     transform: scale(1);
-  }
+}
 
-  #poster-bubble{
-    width: 400px;
+#poster-bubble {
+    width: 280px; /* Adjusted base width */
     opacity:0;
     position: absolute;
     z-index: 1;
-    top:  -10px;
-    left: -90px;
-  }
+    top:  -20px; /* Adjust as needed */
+    left: -50px; /* Adjust as needed */
+    pointer-events: none; /* So it doesn't interfere with poster click */
+}
   
-  .poster:hover{
-        cursor: pointer;
-        #poster-image{
-            filter: drop-shadow(4px 0 0 white) drop-shadow(0 4px 0  white) drop-shadow(-4px 0 0 white) drop-shadow(0 -4px 0  white);
-            transform: scale(1.1);
-        }
-        #poster-bubble{
-            opacity:1;
-            animation: pop 0.5s ease-out forwards;
-        }    
-    }
+.poster:hover {
+    cursor: pointer;
+}
+.poster:hover #poster-image { /* Specificity for hover effect */
+    filter: drop-shadow(4px 0 0 white) drop-shadow(0 4px 0  white) drop-shadow(-4px 0 0 white) drop-shadow(0 -4px 0  white);
+    transform: scale(1.1);
+}
+.poster:hover #poster-bubble {
+    opacity:1;
+    animation: pop 0.5s ease-out forwards;
+}
 
-    @keyframes pop {
-        0% {
-            transform: scale(1, 1);
-          }
-          30% {
-            transform: scale(1.3, 0.7); /* Squash */
-          }
-          50% {
-            transform: scale(0.8, 1.2); /* Stretch */
-          }
-          70% {
-            transform: scale(1.1, 0.9); /* Slight bounce */
-          }
-          100% {
-            transform: scale(1.2, 1.2); /* Final settle */
-          }
-    }
+@keyframes pop {
+    0% { transform: scale(1, 1); }
+    30% { transform: scale(1.3, 0.7); } /* Squash */
+    50% { transform: scale(0.8, 1.2); } /* Stretch */
+    70% { transform: scale(1.1, 0.9); } /* Slight bounce */
+    100% { transform: scale(1.2, 1.2); } /* Final settle */
+}
   
-  .buttons{
+.buttons {
     position: relative;
-  }
+    width: 100%;
+    max-width: 600px; /* Max width for button groups */
+    margin-top: 20px;
+}
   
-  #button-first-row, #button-second-row, #button-third-row{
-    width: auto;
+#button-first-row, #button-second-row, #button-third-row {
+    width: 100%; /* Make tables full width of their container */
     margin: 10px auto;
     border-spacing: 10px;
-  }
+    border-collapse: separate; /* Needed for border-spacing */
+}
   
-  .social-media-marquee{
+.social-media-marquee {
     white-space: nowrap;
     overflow: hidden;
     min-height: 7vh; 
     margin-top: 30px;
     background-color:#fa0729;
     position: relative;
-  }
+    padding: 10px 0; /* Add some padding */
+}
   
-  .social-media-marquee-content{
-    display: inline-block;
-    align-items: center;
-    justify-content: center;
-    gap: 36px;
-    animation: slide 10s linear infinite;
-  }
+.social-media-marquee-content {
+    display: inline-block; /* Keep as inline-block for marquee */
+    align-items: center; /* Vertical alignment for flex items if it were flex */
+    /* justify-content: center; Not applicable for inline-block */
+    /* gap: 36px; Use margin for spacing inline-block items */
+    animation: slide 25s linear infinite; /* Adjusted speed */
+}
+
+.social-media-marquee-content > * { /* Add margin to children for spacing */
+    margin-right: 36px;
+    vertical-align: middle;
+}
   
-  .social-media-marquee:hover .social-media-marquee-content{
+.social-media-marquee:hover .social-media-marquee-content {
     animation-play-state: paused;
-  }
+}
   
-  @keyframes slide{
-    from{
-        transform: translateX(0);
-    }
-    to{ 
-        transform: translateX(-100%);
-    }
-  }
+@keyframes slide{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-100%); }
+}
   
-  @keyframes pixelize {
-    0%{
-      background-position-y: 0px;
-    }
-    100%{
-      background-position-y: -480px;
-    }
-  }
+@keyframes pixelize {
+    0%{ background-position-y: 0px; }
+    100%{ background-position-y: -480px; }
+}
    
-  #catchphrase{
+#catchphrase, #catchphrase-clone {
     color:white;
-    font-size: 2rem;
-  }
+    font-size: 1.8rem; /* Base size */
+}
   
-  .fa-brands { 
+.fa-brands { 
     transform: scale(1.5,1.5);
-    font-size: 30px; 
+    font-size: 28px; /* Base size */
     text-align: center;
     text-decoration: none;
-    margin: 25px; 
+    /* margin: 25px;  Handled by parent content spacing */
     color: white;
-  }
+}
   
-  .fa-brands:hover {
+.fa-brands:hover {
     transform: scale(1.7);
-  }
+}
   
-  #button-subscribe, #button-feed, 
-  #button-projects, #button-vlogs, 
-  #button-reels, #button-resume,
-  #button-submit {
-    width: 100px;
-    height: 35px;
-    display: flex;
+#button-subscribe, #button-feed, 
+#button-projects, #button-vlogs, 
+#button-reels, #button-resume,
+#button-submit {
+    width: 120px; /* Base width, will be adjusted in media queries */
+    height: 40px; /* Base height */
+    display: flex; /* Use flex for centering text inside button */
     position: relative;
     align-items: center;
     justify-content: center;
     background-color:white;
     border: 2px solid #fa0729;
     cursor: pointer;
-  }
+    padding: 5px; /* Add some padding */
+    margin: 0 auto; /* Center buttons if they are block/flex */
+}
   
-  .button:hover{
-    background: #fa0729 url('assets/brnd-kit/pixel.png') ;
+.button:hover{ /* Target the button element itself */
+    background: #fa0729 url('assets/brnd-kit/pixel.png') ; /* Corrected path if needed */
     transition-delay: 0.3s;
     background-size: 200px; 
     animation: pixelize 0.3s steps(7) forwards;
-  }
+}
   
-  .button-text {
+.button-text {
     text-decoration: none;
     color: #fa0729;
-    padding: 25px;
+    padding: 0; /* Padding is on the button now */
     font-family: 'Pixel Comic Sans', sans-serif;
-  }
+    display: inline-block; /* Ensure it behaves well */
+}
   
-  .button-text:hover{
+.button:hover .button-text{ /* Target text when button is hovered */
     transition-delay: 0.3s;
     color: white;
-  }
+}
 
-/* Style for Sections */
-
-  #section{
-      margin-top: 30px;
-  }
-  
-  #section, .section-header,
-  .section-block{
-    border: 1px solid black;
-    background-color: white;
-    position: relative;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .section-header {
-    color: white; 
-    background-color: #fa0729;
-    white-space: nowrap;
-  }
-  
-  #section{
-    width: 200px;
-    height: auto;
+/* Style for Sections - Refactored from table to divs */
+#section-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow columns to wrap on smaller screens */
+    justify-content: center; /* Center columns */
+    gap: 20px; /* Space between columns */
+    padding: 20px;
+    position: relative; /* For z-index of section-bg */
+    margin-top: 30px;
+    width: 100%;
+    max-width: 1400px; /* Max width for the entire section area */
     margin-left: auto;
     margin-right: auto;
-  }
+}
+
+.section-column {
+    flex: 1 1 300px; /* Flex properties for columns: grow, shrink, basis */
+    min-width: 280px; /* Minimum width before wrapping */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between header and block within a column */
+}
   
-  #section-feed, #section-reels, #section-projects, #section-vlogs{
-    width: auto;
-    height: 30px;
-  }
+.section-header {
+    color: white; 
+    background-color: #fa0729;
+    padding: 10px 15px;
+    font-size: 1.2rem;
+    text-align: center;
+    border: 1px solid black;
+    white-space: nowrap; /* Keep if title should not wrap */
+}
+
+.section-header i {
+    margin-left: 8px;
+    font-size: 0.9em;
+    float: right; /* Position icons to the right */
+    cursor: pointer;
+}
   
-  #section-feed .fa-window-minimize, 
-  #section-reels .fa-window-minimize{
-    margin-left: 250px;
-  }
+.section-block {
+    border: 1px solid black;
+    background-color: white;
+    padding: 15px;
+    flex-grow: 1; /* Allow block to fill column height if needed */
+    /* Removed align/justify as content will flow naturally */
+}
+
+/* Specifics for iframe and embeds */
+#section-feed-block iframe {
+    width: 100%;
+    max-width: 350px; /* Original max width */
+    height: 600px; /* Adjust height as needed */
+    display: block; /* Center iframe if max-width is less than container */
+    margin: 0 auto;
+}
+
+.instagram-embed-container {
+    width: 100%;
+    max-width: 350px; /* Original max width of the reel parent */
+    min-height: 500px; /* Minimum height for the embed */
+    margin: 0 auto; /* Center the container */
+    overflow: hidden; /* As original */
+}
+
+.instagram-embed-container .instagram-media {
+    margin: 0 auto !important; /* Force centering of the blockquote */
+}
   
-  #section-projects .fa-window-minimize{
-    margin-left: 410px;
-  }
-  
-  #section-vlogs .fa-window-minimize{
-    margin-left: 440px;
-  }
-  
-  #section-projects-block, #section-vlogs-block, 
-  #section-feed-block, #section-reels-block{
-     height: auto;
-  }
-  
-  .slider-projects::-webkit-scrollbar{
-    display:none;
-  }
-  
-  .slider-vlogs::-webkit-scrollbar{
-    display:none;
-  }
-  
-  .slider-projects-wrap, .slider-vlogs-wrap{
+/* Sliders */
+.slider-projects-wrap, .slider-vlogs-wrap {
     display:flex;
     align-items: center;
     justify-content: center;
-    width: 550px;
-  }
+    width: 100%; /* Full width of its parent block */
+    margin: 0 auto;
+    padding: 0 5px; /* Padding for side buttons */
+}
   
-  .slider-projects, .slider-vlogs{
-    width: 1500px;
-    overflow-x: scroll;
+.slider-projects, .slider-vlogs {
+    /* width: 1500px; This large fixed width is for the scrollable content. It's okay. */
+    /* Let's make it a bit more dynamic based on content */
     display:flex;
-    margin:0 auto;
-  }
+    overflow-x: auto; /* Changed to auto for better scrollbar handling */
+    scroll-behavior: smooth; /* Moved from JS for consistency */
+    -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
+    padding: 10px 0; /* Padding inside the scroll area */
+    gap: 20px; /* Space between slider items */
+}
+
+.slider-projects::-webkit-scrollbar, .slider-vlogs::-webkit-scrollbar {
+    height: 8px; /* Make scrollbar visible but not too obtrusive */
+}
+.slider-projects::-webkit-scrollbar-thumb, .slider-vlogs::-webkit-scrollbar-thumb {
+    background: #fa0729;
+    border-radius: 4px;
+}
+
+.slider-projects a, .slider-vlogs a { /* Target the <a> tag directly */
+    flex: 0 0 auto; /* Prevent items from shrinking/growing, auto width */
+    width: 280px; /* Base width for slider items */
+    display: block; /* Ensure link takes up space */
+}
   
-  .slider-projects div, .slider-vlogs div{
-    width: 100%;
-    display: grid;
-    grid-template-columns: auto;
-    grid-gap: 20px;
-    padding: 10px;
-    flex: none;
-  }
-  
-  .slider-projects img, .slider-vlogs img{
-    margin: 30px;
-    width: 390px;
+.slider-projects img, .slider-vlogs img {
+    /* width: 390px; Base width defined on parent <a> now */
     filter: grayscale(100);
-    transition: transform 0.5s;
-  }
+    transition: transform 0.5s, filter 0.5s; /* Added filter to transition */
+    border: 2px solid transparent; /* For hover effect */
+    border-radius: 5px; /* Rounded corners for images */
+}
   
-  #projects-back-button, #projects-next-button,
-  #vlogs-back-button, #vlogs-next-button{
-    width: 50px;
-    height: 50px;
+#projects-back-button, #projects-next-button,
+#vlogs-back-button, #vlogs-next-button {
+    width: 40px; /* Adjusted size */
+    height: 40px;
     cursor: pointer;
-  }
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+}
   
-  .slider-projects img:hover, .slider-vlogs img:hover{
+.slider-projects img:hover, .slider-vlogs img:hover {
     filter: grayscale(0);
     cursor: pointer;
-    transform: scale(1.1);
-  }
+    transform: scale(1.05); /* Slightly smaller hover scale */
+    border-color: #fa0729;
+}
   
-  h1{
+h1, h2 { /* Base heading styles */
     text-align: center;
-  }
+    width: 100%;
+}
 
 /* Style for Guestbook */
+.guestbook {
+    padding: 20px;
+    max-width: 700px;
+    margin: 20px auto; /* Center guestbook */
+}
 
-  .guestbook-form{
+.guestbook-form {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -309,85 +356,191 @@
     justify-content: center;
     color: white;
     background-color: #fa0729;
-  }
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.guestbook-form h1 {
+    margin-top: 0;
+}
+
+.guestbook-form form {
+    width: 100%;
+    max-width: 500px; /* Max width for form itself */
+}
   
-  .guestbook-entries{
-    display: none;
-  }
+.guestbook-entries {
+    /* display: none; Will be shown by JS */
+    margin-top: 30px;
+}
   
-  #name, #country, #comment{
+#name, #country, #comment {
+    width: 100%; /* Full width of form container */
+    padding: 10px;
+    margin-bottom: 15px; /* Space between fields */
     border-radius: 4px;
+    border: 1px solid #ccc;
     text-align: left;
     font-family: 'Pixel Comic Sans', sans-serif;
-  }
-  
-  #name{
-    margin-left: 25px;
-  }
-  
-  #entries {
+}
+
+#comment {
+    min-height: 80px; /* Minimum height for textarea */
+    resize: vertical; /* Allow vertical resize */
+}
+
+.guestbook-form label {
+    display: block;
+    margin-bottom: 5px;
     text-align: left;
-  }
-
-  #entries div {
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
-    margin-bottom: 1rem;
-  }
-
- .entry-box {
-    width: 515px; 
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 2px dashed #fa0729;
-    border-radius: 10px;
-    background-color: white;
-    color: black;
-    white-space: pre-wrap; 
-    word-wrap: break-word; 
+    width: 100%;
+}
+  
+#entries {
+    text-align: left;
 }
 
 .chat-bubble {
-    max-width: 515px;
+    max-width: 100%; /* Bubbles take full width of their container */
     margin: 10px auto;
     padding: 12px 16px;
     background-color: #fff;
-    border-radius: 20px;
+    border-radius: 15px; /* Slightly less rounded */
     border: 2px solid #fa0729;
     color: black;
     position: relative;
     animation: fadeUp 0.5s ease-out;
     box-shadow: 2px 4px 8px rgba(0,0,0,0.1);
+    word-wrap: break-word; /* Ensure long words break */
 }
 
 .bubble-header {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
+  align-items: center; /* Align items vertically */
+  flex-wrap: wrap; /* Allow wrapping if too long */
+  font-size: 0.9rem; /* Adjusted size */
   margin-bottom: 8px;
   color: #fa0729;
+}
+
+.bubble-header strong {
+    margin-right: 10px; /* Space between name and timestamp */
 }
 
 .timestamp {
   font-size: 0.75rem;
   color: gray;
-  margin-left: 10px;
+  /* margin-left: 10px; Removed, handled by flex space-between or wrap */
+  white-space: nowrap; /* Prevent timestamp from breaking line */
 }
 
 .bubble-body {
-  white-space: pre-wrap;
+  white-space: pre-wrap; /* Keep newlines from textarea */
   word-wrap: break-word;
   font-size: 1rem;
 }
 
 @keyframes fadeUp {
-  0% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.9);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
+  0% { opacity: 0; transform: translateY(10px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+/* MEDIUM SCREENS (Tablets) */
+@media (max-width: 768px) {
+    .hero { min-height: auto; padding-bottom: 30px;}
+    #logo-icon { width: 130px; padding-top: 30px; }
+    #poster-image { width: 150px; }
+    #poster-bubble { width: 220px; left: -35px; top: -15px; }
+
+    .buttons table, .buttons tbody, .buttons tr, .buttons td {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .buttons td {
+        margin-bottom: 10px;
+    }
+    .buttons .button { /* Button itself */
+        width: 60%; 
+        min-width: 180px; /* Minimum clickable width */
+    }
+    #button-first-row, #button-second-row, #button-third-row {
+        border-spacing: 0;
+        margin-bottom: 0;
+    }
+    #button-first-row td, #button-second-row td, #button-third-row td {
+        padding: 5px 0; /* Add some padding when stacked */
+    }
+
+    #catchphrase, #catchphrase-clone { font-size: 1.4rem; }
+    .fa-brands { font-size: 24px; }
+
+    /* Section layout adjustments */
+    #section-container {
+        flex-direction: column; /* Stack columns vertically */
+        align-items: center; /* Center stacked columns */
+    }
+    .section-column {
+        width: 90%; /* Allow columns to take more width when stacked */
+        max-width: 500px; /* Max width for a stacked column */
+        flex-basis: auto; /* Reset flex-basis */
+    }
+    .section-header i { font-size: 0.8em; }
+
+    .slider-projects a, .slider-vlogs a { width: 220px; } /* Smaller slider items */
+    
+    #projects-back-button, #projects-next-button,
+    #vlogs-back-button, #vlogs-next-button {
+        width: 35px;
+        height: 35px;
+    }
+
+    .guestbook-form { padding: 15px; }
+    #button-submit { width: 50%; }
+    .bubble-header { flex-direction: column; align-items: flex-start; }
+    .bubble-header strong { margin-bottom: 5px; }
+    .timestamp { margin-left: 0; }
+}
+
+/* SMALL SCREENS (Mobiles) */
+@media (max-width: 480px) {
+    #logo-icon { width: 100px; padding-top: 20px; }
+    #poster-image { width: 120px; }
+    #poster-bubble { width: 180px; left: -30px; top: -10px; }
+
+    .buttons .button {
+        width: 80%;
+        height: 45px; /* Slightly taller buttons for easier tapping */
+    }
+    .button-text { font-size: 0.9rem; }
+
+    .social-media-marquee-content > * { margin-right: 20px; } /* Less space in marquee */
+    #catchphrase, #catchphrase-clone { font-size: 1rem; }
+    .fa-brands { font-size: 20px; }
+
+    .section-header { font-size: 1rem; padding: 8px 10px; }
+    .section-header i { display: none; } /* Hide icons on very small screens if cluttered */
+    .section-block { padding: 10px; }
+
+    #section-feed-block iframe { height: 450px; } /* Adjust iframe height */
+    .instagram-embed-container { min-height: 400px; }
+
+
+    .slider-projects a, .slider-vlogs a { width: 180px; } /* Even smaller slider items */
+    .slider-projects, .slider-vlogs { gap: 10px; } /* Less gap between slider items */
+
+    #projects-back-button, #projects-next-button,
+    #vlogs-back-button, #vlogs-next-button {
+        width: 30px;
+        height: 30px;
+    }
+
+    .guestbook-form h1 { font-size: 1.5rem; }
+    #name, #country, #comment { padding: 8px; margin-bottom: 10px; font-size: 0.9rem; }
+    #button-submit { width: 70%; height: 40px; }
+    .guestbook-entries h2 { font-size: 1.3rem; }
+    .chat-bubble { padding: 10px; }
+    .bubble-header strong { font-size: 0.85rem; }
+    .bubble-body { font-size: 0.9rem; }
+}
