@@ -175,7 +175,7 @@
   }
   
   .button:hover{
-    background: #fa0729 url('assets/brnd-kit/pixel.png') ;
+    background: #fa0729 url('assets/brand-kit/pixel.png') ;
     transition-delay: 0.3s;
     background-size: 200px; 
     animation: pixelize 0.3s steps(7) forwards;
