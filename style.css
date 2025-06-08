@@ -195,8 +195,16 @@
 
 /* Style for Sections */
 
+.section-container {
+    overflow-x: auto; /* This makes the table scrollable horizontally */
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    padding: 20px;
+    max-width: 100vw;
+    box-sizing: border-box;
+}
+
   #section{
-      margin-top: 30px;
+    margin-top: 30px;
   }
   
   #section, .section-header,
@@ -389,5 +397,56 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+/* --- Media Queries for Responsiveness --- */
+@media (max-width: 768px) {
+    .hero {
+        padding: 15px;
+        min-height: 60vh;
+    }
+
+    #logo-icon {
+        width: 120px;
+    }
+    
+    #poster-bubble {
+        width: 250px;
+    }
+
+    #catchphrase {
+        font-size: 1.2rem;
+    }
+
+    .fa-brands {
+        font-size: 24px;
+    }
+    
+    .slider-projects img, .slider-vlogs img {
+        width: 280px;
+    }
+}
+
+@media (max-width: 480px) {
+    #catchphrase {
+        font-size: 1rem;
+    }
+    
+    .buttons {
+        gap: 10px;
+    }
+    
+    .button {
+        width: 100px;
+        height: 35px;
+    }
+    
+    .button-text {
+        font-size: 0.9rem;
+    }
+
+    .guestbook-form, .guestbook-entries {
+        padding: 15px;
+    }
 }
 
