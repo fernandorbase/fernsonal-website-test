@@ -195,7 +195,7 @@
 
 /* Style for Sections */
 #section-bg{
-    position: absolute;
+    position: relative;
     z-index: -1;
 }
     
@@ -211,8 +211,6 @@
 #section{
     border-collapse: collapse; /* Cleaner borders */
     margin: 0 auto; /* Center the table if viewport is wider */
-    background-color: white;
-    border: 1px solid black;
     min-width: 1200px; /* Minimum width to trigger horizontal scroll */
 }    
   
