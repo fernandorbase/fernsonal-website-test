@@ -194,6 +194,11 @@
   }
 
 /* Style for Sections */
+#section-bg{
+    position: absolute;
+    z-index: -1;
+}
+    
 
 .section-container {
     overflow-x: auto; /* This makes the table scrollable horizontally */
@@ -224,13 +229,6 @@
     color: white; 
     background-color: #fa0729;
     white-space: nowrap;
-  }
-  
-  #section{
-    width: 200px;
-    height: auto;
-    margin-left: auto;
-    margin-right: auto;
   }
   
   #section-feed, #section-reels, #section-projects, #section-vlogs{
