@@ -104,6 +104,8 @@
   }
   
   .social-media-marquee{
+    display:flex;
+    align-items:center;
     white-space: nowrap;
     overflow: hidden;
     min-height: 7vh; 
