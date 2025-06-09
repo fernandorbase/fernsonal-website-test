@@ -118,6 +118,7 @@
     justify-content: center;
     gap: 36px;
     animation: slide 10s linear infinite;
+    margin: 0 auto; /* Center the table if viewport is wider */
   }
   
   .social-media-marquee:hover .social-media-marquee-content{
