@@ -1,11 +1,23 @@
+// Play music
+const audio = document.getElementById("themeSong");
+const toggleAudio = document.querySelector('.poster');
+
+toggleAudio.addEventListener('click', () => {
+if (audio.paused) {
+    audio.play();
+} else {
+    audio.pause();
+}
+});
+
+
+// Browse projects and vlogs through slider
 let scrollProjectsContainer = document.querySelector(".slider-projects");
 let scrollVlogsContainer = document.querySelector(".slider-vlogs");
 let projectsBackButton = document.getElementById("projects-back-button");
 let projectsNextButton = document.getElementById("projects-next-button");
 let vlogsBackButton = document.getElementById("vlogs-back-button");
 let vlogsNextButton = document.getElementById("vlogs-next-button");
-const audio = document.getElementById("themeSong");
-const toggleAudio = document.querySelector('.poster');
 
 scrollProjectsContainer.addEventListener("wheel", (evt)=>{
     evt.preventDefault();
@@ -37,13 +49,13 @@ vlogsNextButton.addEventListener("click", ()=>{
     scrollVlogsContainer.scrollLeft += 450;
   });
 
-toggleAudio.addEventListener('click', () => {
-if (audio.paused) {
-    audio.play();
-} else {
-    audio.pause();
+// Add mobile controls for marquee
+const marquee = document.querySelector('.social-media-marquee');
+if (marquee) {
+    marquee.addEventListener('click', () => {
+        marquee.classList.toggle('is-paused');
+    });
 }
-});
 
 // Add guestbook entry
 function addEntry() {
