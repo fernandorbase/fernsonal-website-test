@@ -24,7 +24,7 @@
   #section-bg{
     min-width: 100%;
     height: 900px;
-    position: relative;
+    position: absolute;
     z-index: -1;
   }
 
@@ -203,6 +203,7 @@
     padding: 20px;
     max-width: 100vw;
     box-sizing: border-box;
+    position:relative;
 }
 
 #section{
