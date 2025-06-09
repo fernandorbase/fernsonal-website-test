@@ -24,7 +24,7 @@
   #section-bg{
     min-width: 100%;
     height: 900px;
-    position: absolute;
+    position: relative;
     z-index: -1;
   }
 
