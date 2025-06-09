@@ -200,8 +200,6 @@
     padding: 20px;
     max-width: 100vw;
     box-sizing: border-box;
-    position: absolute;
-    z-index: 1;
 }
 
 #section{
