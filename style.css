@@ -32,7 +32,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -3;
+    z-index: -2;
   }
 
 /* Style for Hero Section */
